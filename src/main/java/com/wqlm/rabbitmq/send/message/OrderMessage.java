@@ -1,14 +1,21 @@
 package com.wqlm.rabbitmq.send.message;
 
+import java.io.Serializable;
+
 /**
  * 订单的消息实体
+ *
  * @author wqlm
  * @date 2019/8/25 9:53
  */
-public class OrderMessage {
+public class OrderMessage implements Serializable {
 
+    /**
+     * 业务id，在业务系统中的唯一。比如 订单id、支付id、商品id ，消息消费端可以通过该 id 避免消息重复消费
+     */
     private String id;
 
+    // 其他业务字段
     private String name;
 
     public OrderMessage() {

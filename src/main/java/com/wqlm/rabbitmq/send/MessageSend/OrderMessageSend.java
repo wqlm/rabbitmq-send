@@ -1,17 +1,18 @@
-package com.wqlm.rabbitmq.send.service;
+package com.wqlm.rabbitmq.send.MessageSend;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
+ *
  * @author wqlm
  * @date 2019/8/25 9:19
  */
-@Service
-public class SendMessageService {
+@Component
+public class OrderMessageSend {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
