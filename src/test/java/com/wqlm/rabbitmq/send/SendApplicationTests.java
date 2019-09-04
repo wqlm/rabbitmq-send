@@ -1,7 +1,7 @@
 package com.wqlm.rabbitmq.send;
 
+import com.wqlm.rabbitmq.send.MessageSend.OrderMessageSend;
 import com.wqlm.rabbitmq.send.message.OrderMessage;
-import com.wqlm.rabbitmq.send.service.SendMessageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +13,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SendApplicationTests {
 
     @Autowired
-    private SendMessageService service;
+    private OrderMessageSend orderMessageSend;
 
     @Test
     public void contextLoads() {
         OrderMessage orderMessage = new OrderMessage("123","订单123");
-        service.amqpSend(orderMessage);
-//        service.rabbitSend(orderMessage);
+        orderMessageSend.amqpSend(orderMessage);
+//        orderMessageSend.rabbitSend(orderMessage);
     }
 
 }
